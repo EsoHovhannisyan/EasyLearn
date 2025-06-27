@@ -7,7 +7,11 @@ type FormData = {
   phone: string;
 };
 
-export default function RegisterForm() {
+type Props = {
+  onRegister: (data: FormData) => void;
+};
+
+export default function RegisterForm({ onRegister }: Props) {
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
@@ -46,10 +50,18 @@ export default function RegisterForm() {
     }
 
     const digits = formData.phone.replace(/\D/g, '');
-    if (digits.length < 10) {
+    if (digits.length < 8) {
       setError('Phone must be at least 10 digits');
       return;
     }
+
+    onRegister(formData);
+
+    setFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+    });
 
     alert('Signed up!');
   };
@@ -95,5 +107,6 @@ export default function RegisterForm() {
     </form>
   );
 }
+
 
 

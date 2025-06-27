@@ -1,28 +1,29 @@
 import React, { useState, FormEvent } from 'react';
 import style from './AuthPanel.module.css';
 
-type LoginData = {
-  email: string;
+type Props = {
+  registeredEmail: string;
 };
 
-export default function LoginForm() {
-  const [formData, setFormData] = useState<LoginData>({
-    email: '',
-  });
+export default function LoginForm({ registeredEmail }: Props) {
+  const [email, setEmail] = useState('');
   const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    const cleanValue = value.replace(/\s/g, '');
-    setFormData((prev) => ({ ...prev, [name]: cleanValue }));
+    setEmail(e.target.value.replace(/\s/g, ''));
   };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setError(null);
 
-    if (!formData.email.trim() || !formData.email.includes('@')) {
+    if (!email.trim() || !email.includes('@')) {
       setError('Please enter a valid email');
+      return;
+    }
+
+    if (email !== registeredEmail) {
+      setError('This email is not registered');
       return;
     }
 
@@ -37,7 +38,7 @@ export default function LoginForm() {
           type="email"
           name="email"
           placeholder="Enter your email"
-          value={formData.email}
+          value={email}
           onChange={handleChange}
         />
       </label>
@@ -48,4 +49,5 @@ export default function LoginForm() {
     </form>
   );
 }
+
 

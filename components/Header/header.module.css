@@ -22,7 +22,7 @@
   top: 108px;
   left: 20px;
   right: 20px;
-  bottom: 108px;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -43,6 +43,7 @@
   font-size: 22px;
   color: #EDEEF6;
 }
+
 
 .indicators {
   display: flex;
