@@ -1,20 +1,22 @@
+
 .leftSide {
-  flex: 0 0 676px;
-  position: relative;
-  padding-left: 32px;
-  padding-top: 32px;
+  flex: 0 0 48%; 
+  max-width: none; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%; 
+  height: 100vh;
+  margin: 1rem; 
   box-sizing: border-box;
+  min-width: 300px; 
 }
+
 
 .imageWrapper {
   position: relative;
   width: 100%;
-  height: 860px;
-}
-
-.imageWrapper img {
-  object-fit: cover;
-  border-radius: 20px;
+  height: 800px;
 }
 
 .textOverlay {
@@ -22,7 +24,7 @@
   top: 108px;
   left: 20px;
   right: 20px;
-  bottom: 0;
+  bottom: 108px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,20 +32,22 @@
   padding: 20px;
   border-radius: 6px;
   text-align: center;
+  
 }
 
-.topText h2, .bottomText h2 {
-  font-size: 40px;
+.topText h2,
+.bottomText h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
   font-weight: 700;
   color: #EDEEF6;
   letter-spacing: 0.5px;
 }
 
-.topText h4, .bottomText h4 {
-  font-size: 22px;
+.topText h4,
+.bottomText h4 {
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
   color: #EDEEF6;
 }
-
 
 .indicators {
   display: flex;
@@ -66,10 +70,3 @@
   border-radius: 50%;
   background-color: #EDEEF6;
 }
-
-
-
-
-
-
-

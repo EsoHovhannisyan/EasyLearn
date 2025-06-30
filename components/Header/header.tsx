@@ -2,15 +2,15 @@ import Image from "next/image";
 import styles from './header.module.css';
 
 export default function Header() {
-    return (
-         <div className={styles.leftSide}>
+  return (
+    <div className={styles.leftSide}>
       <div className={styles.imageWrapper}>
         <Image
           src="/images/mainImage.jpg"
           alt="Main"
-          width={676}
-          height={960}
-          style={{ objectFit: 'cover' }}
+          fill
+          style={{ objectFit: 'cover', borderRadius: '20px' }}
+          priority
         />
         <div className={styles.textOverlay}>
           <div className={styles.topText}>
@@ -32,6 +32,7 @@ export default function Header() {
         </div>
       </div>
     </div>
-    );
+  );
 }
+
 
