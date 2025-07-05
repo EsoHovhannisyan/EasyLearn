@@ -1,21 +1,47 @@
-.form {
+/* .form {
   width: 100%;
   max-width: 358px;
-  margin: 40px auto;
   border-radius: 12px;
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* align-items: center; */
+  justify-content: space-between;
+  align-items: center;
   gap: 10px;
+} */
+ .form {
+  width: 100%;
+  max-width: 358px;
+  border-radius: 12px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoBlock {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5px; */
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; 
+  margin-bottom: 20px;
+
+
 }
 
 
 .form h2 {
   font-size: 24px;
   text-align: center;
-  color: #0070f3;
+  color: #4D70F0;
   font-weight: 600;
 }
 
@@ -24,6 +50,7 @@
 }
 
 .authButtons {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -56,8 +83,8 @@
 }
 
 
-
 .form label {
+  width: 100%;
   display: block;
   margin-bottom: 18px;
   margin-bottom: 25px;
@@ -150,7 +177,6 @@
 }
 
 .logoTitle {
-  transform: translateY(-170px);
   letter-spacing: 0.5px;
   /* font-weight: 600 !important; */
 }

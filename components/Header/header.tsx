@@ -3,14 +3,13 @@ import styles from './header.module.css';
 
 export default function Header() {
   return (
-    <div className={styles.leftSide}>
-      <div className={styles.imageWrapper}>
+      <div className={styles.imageContainer}>
         <Image
           src="/images/mainImage.jpg"
           alt="Main"
           fill
-          style={{ objectFit: 'cover', borderRadius: '20px' }}
           priority
+          className={styles.imageWrapper}
         />
         <div className={styles.textOverlay}>
           <div className={styles.topText}>
@@ -31,7 +30,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
